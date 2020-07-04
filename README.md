@@ -1,4 +1,4 @@
-#Chinese-lang / CN-lang
+# Chinese-lang / CN-lang
 **by lzexmpoane**
 
 这是测试版。This is a beta version.  
