@@ -1,13 +1,6 @@
 /*
 CN-lang
 by lzexmpoane
-这玩意儿就是随便写写用来玩的
-语法乱七八糟
-还是wenyan-lang写得好
-就好像易语言一样
-就只是简单的替换文字
-没啥卵用
-别想着用中文编程了，老老实实去学英文吧
 */
 #include <iostream>
 #include <cstdio>
