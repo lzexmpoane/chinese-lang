@@ -134,18 +134,23 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 {
     for (string::size_type pos(0); pos != string::npos; pos += new_value.length()) {
         if ((pos = str.find(old_value, pos)) != string::npos)
-            if (old_value != "双引" && str.find("双引", pos) == pos + 0)
+            if (old_value != "双引「" && old_value != "」双引")
             {
-                pos -= 2;
-                cout << pos << endl;
-                str.replace(pos, 4, "\"");
-                while (str.find("双引", pos) == pos)
-                {
-                    pos++;
-                }
-                pos++;
-                str.replace(pos, 4, "\"");
-                pos += 4;
+                int pos1, pos2;
+                pos1 = str.find("双引「", pos);
+                pos2 = str.find("」双引", pos);
+                if (pos1 == string::npos)pos1 = 2147483647;
+                if (pos2 == string::npos)pos2 = 2147483647;
+                if (pos1 <= pos2)str.replace(pos, old_value.length(), new_value);
+            }
+            else if (old_value != "单引「" && old_value != "」单引")
+            {
+                int pos1, pos2;
+                pos1 = str.find("单引「", pos);
+                pos2 = str.find("」单引", pos);
+                if (pos1 == string::npos)pos1 = 2147483647;
+                if (pos2 == string::npos)pos2 = 2147483647;
+                if (pos1 <= pos2)str.replace(pos, old_value.length(), new_value);
             }
             else str.replace(pos, old_value.length(), new_value);
         else break;
@@ -174,7 +179,6 @@ int main()
     replace_all_distinct(file, "字串", "string");
     replace_all_distinct(file, "布尔", "bool");
     replace_all_distinct(file, "无类型", "void");
-    replace_all_distinct(file, "单引", "\'");
     replace_all_distinct(file, "重复直到「", "while(");
     replace_all_distinct(file, "」停止", ")");
     replace_all_distinct(file, "括以", "(");
@@ -243,6 +247,10 @@ int main()
     replace_all_distinct(file, "位或", "|");
     replace_all_distinct(file, "的", ".");
     replace_all_distinct(file, "新", "new");
+    replace_all_distinct(file, "双引「", "\"");
+    replace_all_distinct(file, "」双引", "\"");
+    replace_all_distinct(file, "单引「", "\'");
+    replace_all_distinct(file, "」单引", "\'");
     replace_all_distinct(file, "「", "");
     replace_all_distinct(file, "」", "");
     cout << file;
