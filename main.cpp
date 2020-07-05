@@ -24,102 +24,7 @@ string head =
 using namespace std;\n";
 string Cnm[] = { "零","一","二","三","四","五","六","七","八","九","十","百","千","万","亿",
 "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖","拾","佰","仟","萬","億" };
-int chineseNum2num(wstring s)
-{
-    map<wchar_t, int> chineseNum;
-    chineseNum.insert(pair<wchar_t, int>(L'零', 0));
-    chineseNum.insert(pair<wchar_t, int>(L'一', 1));
-    chineseNum.insert(pair<wchar_t, int>(L'二', 2));
-    chineseNum.insert(pair<wchar_t, int>(L'三', 3));
-    chineseNum.insert(pair<wchar_t, int>(L'四', 4));
-    chineseNum.insert(pair<wchar_t, int>(L'五', 5));
-    chineseNum.insert(pair<wchar_t, int>(L'六', 6));
-    chineseNum.insert(pair<wchar_t, int>(L'七', 7));
-    chineseNum.insert(pair<wchar_t, int>(L'八', 8));
-    chineseNum.insert(pair<wchar_t, int>(L'九', 9));
-    chineseNum.insert(pair<wchar_t, int>(L'十', 10));
-    chineseNum.insert(pair<wchar_t, int>(L'百', 100));
-    chineseNum.insert(pair<wchar_t, int>(L'千', 1000));
-    chineseNum.insert(pair<wchar_t, int>(L'万', 10000));
-    chineseNum.insert(pair<wchar_t, int>(L'亿', 100000000));
-    chineseNum.insert(pair<wchar_t, int>(L'壹', 1));
-    chineseNum.insert(pair<wchar_t, int>(L'贰', 2));
-    chineseNum.insert(pair<wchar_t, int>(L'叁', 3));
-    chineseNum.insert(pair<wchar_t, int>(L'肆', 4));
-    chineseNum.insert(pair<wchar_t, int>(L'伍', 5));
-    chineseNum.insert(pair<wchar_t, int>(L'陆', 6));
-    chineseNum.insert(pair<wchar_t, int>(L'柒', 7));
-    chineseNum.insert(pair<wchar_t, int>(L'捌', 8));
-    chineseNum.insert(pair<wchar_t, int>(L'玖', 9));
-    chineseNum.insert(pair<wchar_t, int>(L'拾', 10));
-    chineseNum.insert(pair<wchar_t, int>(L'佰', 100));
-    chineseNum.insert(pair<wchar_t, int>(L'仟', 1000));
-    chineseNum.insert(pair<wchar_t, int>(L'萬', 10000));
-    chineseNum.insert(pair<wchar_t, int>(L'億', 100000000));
 
-    int result = 0, tmp = 0, hnd_mln = 0;
-    wchar_t curr_char;
-    int curr_digit;
-    for (int i = 0; i < s.length(); ++i)
-    {
-        curr_char = s.at(i);
-        if (chineseNum.find(curr_char) == chineseNum.end())
-            return -1;
-        curr_digit = chineseNum.at(curr_char);
-
-        if (curr_digit == pow(10, 8))//meet 「亿」 or 「億」
-        {
-            result = result + tmp;
-            result = result * curr_digit;
-            //get result before 「亿」 and store it into hnd_mln
-            //reset `result`
-            hnd_mln = hnd_mln * pow(10, 8) + result;
-            result = 0;
-            tmp = 0;
-        }
-        else
-        {
-            if (curr_digit == pow(10, 4))//meet 「万」 or 「萬」
-            {
-                result = result + tmp;
-                result = result * curr_digit;
-                tmp = 0;
-            }
-            else
-            {
-                if (curr_digit >= 10)//meet 「十」, 「百」, 「千」 or their traditional version
-                {
-                    if (tmp == 0)
-                        tmp = 1;
-                    result = result + curr_digit * tmp;
-                    tmp = 0;
-                }
-                else
-                {
-                    tmp = tmp * 10 + curr_digit;
-                    /*if (curr_digit != NULL)
-
-                    else
-                    {
-                        return result;
-                    }*/
-                }
-            }
-        }
-    }
-    result = result + tmp;
-    result = result + hnd_mln;
-    return result;
-}
-
-template <class T>
-int getArrayLen(T& array)
-{//使用模板定义一 个函数getArrayLen,该函数将返回数组array的长度
-    return (sizeof(array) / sizeof(array[0]));
-}
-/*————————————————
-版权声明：本文为CSDN博主「赵大寳Note」的原创文章，遵循CC 4.0 BY - SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https ://blog.csdn.net/u010412858/java/article/details/80354996*/
 string& replace_all(string& str, const string& old_value, const string& new_value)
 {
     while (true) {
@@ -167,11 +72,15 @@ int main()
     buf << infile.rdbuf();
     file = buf.str();
     cout << head;
-    replace_all_distinct(file, "始", "{");
-    replace_all_distinct(file, "终", "}");
-    replace_all_distinct(file, "我有一函数为主", "int main(int 参数数, char* 参数[])");
+    replace_all_distinct(file, "程序结束", "exit(0)");
+    replace_all_distinct(file, "起始", "{");
+    replace_all_distinct(file, "至终", "}");
+    replace_all_distinct(file, "我有一函数为主", "int main(int 参数量, char* 参数[])");
     replace_all_distinct(file, "我有一函数为", "");
     replace_all_distinct(file, "我有一言，曰", "cout << ");
+    replace_all_distinct(file, "暂停", "\"pause\"");
+    replace_all_distinct(file, "我需使用命令，曰", "system(");
+    replace_all_distinct(file, "立即执行", ")");
     replace_all_distinct(file, "我有一数为", "");
     replace_all_distinct(file, "整数", "int");
     replace_all_distinct(file, "小数", "double");
@@ -187,11 +96,34 @@ int main()
     replace_all_distinct(file, "减", " - ");
     replace_all_distinct(file, "负", "-");
     replace_all_distinct(file, "点", ".");
+    replace_all_distinct(file, "零", "0");
+    replace_all_distinct(file, "一", "1");
+    replace_all_distinct(file, "二", "2");
+    replace_all_distinct(file, "三", "3");
+    replace_all_distinct(file, "四", "4");
+    replace_all_distinct(file, "五", "5");
+    replace_all_distinct(file, "六", "6");
+    replace_all_distinct(file, "七", "7");
+    replace_all_distinct(file, "八", "8");
+    replace_all_distinct(file, "九", "9");
+    replace_all_distinct(file, "十", "10");
+    replace_all_distinct(file, "百", "100");
+    replace_all_distinct(file, "千", "1000");
+    replace_all_distinct(file, "万", "10000");
+    replace_all_distinct(file, "十万", "100000");
+    replace_all_distinct(file, "百万", "1000000");
+    replace_all_distinct(file, "千万", "10000000");
+    replace_all_distinct(file, "亿", "100000000");
+    replace_all_distinct(file, "十亿", "1000000000");
+    replace_all_distinct(file, "百亿", "10000000000");
+    replace_all_distinct(file, "千亿", "100000000000");
+    replace_all_distinct(file, "兆", "100000000000");
     replace_all_distinct(file, "乘", " * ");
     replace_all_distinct(file, "除", " / ");
     replace_all_distinct(file, "赋以", " = ");
     replace_all_distinct(file, "赋", " = ");
     replace_all_distinct(file, "乃得", "return ");
+    replace_all_distinct(file, "地址之", "&");
     replace_all_distinct(file, "地址", "&");
     replace_all_distinct(file, "的指针", "*");
     replace_all_distinct(file, "指针", "*");
@@ -217,7 +149,7 @@ int main()
     replace_all_distinct(file, "名字空间", "namespace");
     replace_all_distinct(file, "我有一结构体", "struct");
     replace_all_distinct(file, "我有一类", "class");
-    replace_all_distinct(file, "公开", "public"); 
+    replace_all_distinct(file, "公开", "public");
     replace_all_distinct(file, "保护", "protected");
     replace_all_distinct(file, "如下", ":");
     replace_all_distinct(file, "隐藏", "private");
