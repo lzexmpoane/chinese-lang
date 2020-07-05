@@ -1,5 +1,5 @@
 ﻿  main.cpp
-C:\Users\19299\Desktop\CN-lang\main.cpp(59,23): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\19299\Desktop\CN-lang\main.cpp(72,44): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-C:\Users\19299\Desktop\CN-lang\main.cpp(142,11): warning C4101: “stream”: 未引用的局部变量
-  CN-lang.vcxproj -> C:\Users\19299\Desktop\CN-lang\Debug\CN-lang.exe
+D:\Users\19299\Documents\GitHub\chinese-lang\main.cpp(63,23): warning C4018: “<”: 有符号/无符号不匹配
+D:\Users\19299\Documents\GitHub\chinese-lang\main.cpp(76,44): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\Users\19299\Documents\GitHub\chinese-lang\main.cpp(159,11): warning C4101: “stream”: 未引用的局部变量
+  CN-lang.vcxproj -> D:\Users\19299\Documents\GitHub\chinese-lang\Debug\CN-lang.exe

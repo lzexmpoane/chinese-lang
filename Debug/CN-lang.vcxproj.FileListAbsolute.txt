@@ -1,2 +1,4 @@
 C:\Users\19299\Desktop\CN-lang\Debug\CN-lang.exe
 C:\Users\19299\Desktop\CN-lang\Debug\CN-lang.pdb
+D:\Users\19299\Documents\GitHub\chinese-lang\Debug\CN-lang.exe
+D:\Users\19299\Documents\GitHub\chinese-lang\Debug\CN-lang.pdb
