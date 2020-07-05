@@ -140,8 +140,8 @@ int main()
     replace_all_distinct(file, "小于", "<");
     replace_all_distinct(file, "大等", ">=");
     replace_all_distinct(file, "小等", "<=");
-    replace_all_distinct(file, "等于", "==");
     replace_all_distinct(file, "不等于", "!=");
+    replace_all_distinct(file, "等于", "==");
     replace_all_distinct(file, "并且", "&&");
     replace_all_distinct(file, "或者", "||");
     replace_all_distinct(file, "模以", "%");
