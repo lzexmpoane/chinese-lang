@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 CN-lang
 by lzexmpoane
 */
@@ -28,8 +28,8 @@ string head =
 #include <stack>\n\
 #include <queue>\n\
 using namespace std;\n";
-string Cnm[] = { "Áã","Ò»","¶ş","Èı","ËÄ","Îå","Áù","Æß","°Ë","¾Å","Ê®","°Ù","Ç§","Íò","ÒÚ",
-"Áã", "Ò¼", "·¡", "Èş", "ËÁ", "Îé", "Â½", "Æâ", "°Æ", "¾Á","Ê°","°Û","Çª","Èf","ƒ|" };
+string Cnm[] = { "é›¶","ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","ä¸ƒ","å…«","ä¹","å","ç™¾","åƒ","ä¸‡","äº¿",
+"é›¶", "å£¹", "è´°", "å", "è‚†", "ä¼", "é™†", "æŸ’", "æŒ", "ç–","æ‹¾","ä½°","ä»Ÿ","è¬","å„„" };
 
 string& replace_all(string& str, const string& old_value, const string& new_value)
 {
@@ -45,18 +45,18 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 {
 	for (string::size_type pos(0); pos != string::npos; pos += new_value.length()) {
 		if ((pos = str.find(old_value, pos)) != string::npos)
-			if (old_value != "Ë«Òı¡¸" && old_value != "¡¹Ë«Òı" && old_value != "µ¥Òı¡¸" && old_value != "¡¹µ¥Òı")
+			if (old_value != "åŒå¼•ã€Œ" && old_value != "ã€åŒå¼•" && old_value != "å•å¼•ã€Œ" && old_value != "ã€å•å¼•")
 			{
 				int pos1, pos2;
-				pos1 = str.find("Ë«Òı¡¸", pos);
-				pos2 = str.find("¡¹Ë«Òı", pos);
+				pos1 = str.find("åŒå¼•ã€Œ", pos);
+				pos2 = str.find("ã€åŒå¼•", pos);
 				if (pos1 == string::npos)pos1 = 2147483647;
 				if (pos2 == string::npos)pos2 = 2147483647;
 				if (pos1 <= pos2)
 				{
 					int pos3, pos4;
-					pos3 = str.find("µ¥Òı¡¸", pos);
-					pos4 = str.find("¡¹µ¥Òı", pos);
+					pos3 = str.find("å•å¼•ã€Œ", pos);
+					pos4 = str.find("ã€å•å¼•", pos);
 					if (pos3 == string::npos)pos3 = 2147483647;
 					if (pos4 == string::npos)pos4 = 2147483647;
 					if (pos3 <= pos4)str.replace(pos, old_value.length(), new_value);
@@ -67,129 +67,136 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 	}
 	return str;
 }
-int main()
+int main(int argc, char* argv[])
 {
 	ifstream infile;
-	infile.open("cn_soruce.cnlang", ios::in);
+	string sccf;
+	if (argc == 1 || argc >= 5) { cout << "å‚æ•°ç»™å¤šä¼šåƒä¸æ¶ˆï¼Œä¸è¶³ä¼šåƒä¸é¥±å“¦ï¼   The parameters cannot be excessive or insufficient!"; return 0; }
+	infile.open(argv[1], ios::in);
 	FILE* stream;
-	//freopen_s(&stream, "test.cpp", "w", stdout);
+	sccf = "";
+	if (argc == 3) { sccf = argv[2]; sccf += "\\CNLoutput.cpp"; }
+	if (argc == 4) { sccf = argv[2]; sccf += "\\"; sccf += argv[3]; }
+	freopen_s(&stream, sccf.c_str(), "w", stdout);
 	stringstream buf;
 	buf << infile.rdbuf();
 	file = buf.str();
 	cout << head;
-	replace_all_distinct(file, "³ÌĞò½áÊø", "exit(0)");
-	replace_all_distinct(file, "ÆğÊ¼", "{");
-	replace_all_distinct(file, "ÖÁÖÕ", "}");
-	replace_all_distinct(file, "ÎÒÓĞÒ»º¯ÊıÎªÖ÷", "int main(int ²ÎÊıÁ¿, char* ²ÎÊı[])");
-	replace_all_distinct(file, "ÎÒÓĞÒ»º¯ÊıÎª", "");
-	replace_all_distinct(file, "ÎÒÓĞÒ»ÑÔ£¬Ô»", "cout << ");
-	replace_all_distinct(file, "ÔİÍ£", "\"pause\"");
-	replace_all_distinct(file, "ÎÒĞèÊ¹ÓÃÃüÁî£¬Ô»", "system(");
-	replace_all_distinct(file, "Á¢¼´Ö´ĞĞ", ")");
-	replace_all_distinct(file, "ÎÒÓĞÒ»ÊıÎª", "");
-	replace_all_distinct(file, "ÕûÊı", "int");
-	replace_all_distinct(file, "Ğ¡Êı", "double");
-	replace_all_distinct(file, "×Ö·û", "char");
-	replace_all_distinct(file, "×Ö´®", "string");
-	replace_all_distinct(file, "²¼¶û", "bool");
-	replace_all_distinct(file, "ÎŞÀàĞÍ", "void");
-	replace_all_distinct(file, "ÖØ¸´Ö±µ½¡¸", "while(");
-	replace_all_distinct(file, "¡¹Í£Ö¹", ")");
-	replace_all_distinct(file, "À¨ÒÔ", "(");
-	replace_all_distinct(file, "Ö¹", ")");
-	replace_all_distinct(file, "¼Ó", " + ");
-	replace_all_distinct(file, "¼õ", " - ");
-	replace_all_distinct(file, "¸º", "-");
-	replace_all_distinct(file, "µã", ".");
-	replace_all_distinct(file, "Áã", "0");
-	replace_all_distinct(file, "Ò»", "1");
-	replace_all_distinct(file, "¶ş", "2");
-	replace_all_distinct(file, "Èı", "3");
-	replace_all_distinct(file, "ËÄ", "4");
-	replace_all_distinct(file, "Îå", "5");
-	replace_all_distinct(file, "Áù", "6");
-	replace_all_distinct(file, "Æß", "7");
-	replace_all_distinct(file, "°Ë", "8");
-	replace_all_distinct(file, "¾Å", "9");
-	replace_all_distinct(file, "Ê®", "10");
-	replace_all_distinct(file, "°Ù", "100");
-	replace_all_distinct(file, "Ç§", "1000");
-	replace_all_distinct(file, "Íò", "10000");
-	replace_all_distinct(file, "Ê®Íò", "100000");
-	replace_all_distinct(file, "°ÙÍò", "1000000");
-	replace_all_distinct(file, "Ç§Íò", "10000000");
-	replace_all_distinct(file, "ÒÚ", "100000000");
-	replace_all_distinct(file, "Ê®ÒÚ", "1000000000");
-	replace_all_distinct(file, "°ÙÒÚ", "10000000000");
-	replace_all_distinct(file, "Ç§ÒÚ", "100000000000");
-	replace_all_distinct(file, "Õ×", "100000000000");
-	replace_all_distinct(file, "³Ë", " * ");
-	replace_all_distinct(file, "³ı", " / ");
-	replace_all_distinct(file, "¸³ÒÔ", " = ");
-	replace_all_distinct(file, "¸³", " = ");
-	replace_all_distinct(file, "ÄËµÃ", "return ");
-	replace_all_distinct(file, "µØÖ·Ö®", "&");
-	replace_all_distinct(file, "µØÖ·", "&");
-	replace_all_distinct(file, "µÄÖ¸Õë", "*");
-	replace_all_distinct(file, "Ö¸Õë", "*");
-	replace_all_distinct(file, "¾äÍê", ";");
-	replace_all_distinct(file, "¸ô", ",");
-	replace_all_distinct(file, "Ô»", " ");
-	replace_all_distinct(file, "£¬", "");
-	replace_all_distinct(file, "¡£", ";");
-	replace_all_distinct(file, "¿Õ´®", "\"\"");
-	replace_all_distinct(file, "Èô", "if(");
-	replace_all_distinct(file, "Õß", ")");
-	replace_all_distinct(file, "Ôò", "else ");
-	replace_all_distinct(file, "´óÓÚ", ">");
-	replace_all_distinct(file, "Ğ¡ÓÚ", "<");
-	replace_all_distinct(file, "´óµÈ", ">=");
-	replace_all_distinct(file, "Ğ¡µÈ", "<=");
-	replace_all_distinct(file, "²»µÈÓÚ", "!=");
-	replace_all_distinct(file, "µÈÓÚ", "==");
-	replace_all_distinct(file, "²¢ÇÒ", "&&");
-	replace_all_distinct(file, "»òÕß", "||");
-	replace_all_distinct(file, "Ä£ÒÔ", "%");
-	replace_all_distinct(file, "Ê¹ÓÃ", "using");
-	replace_all_distinct(file, "Ãû×Ö¿Õ¼ä", "namespace");
-	replace_all_distinct(file, "ÎÒÓĞÒ»½á¹¹Ìå", "struct");
-	replace_all_distinct(file, "ÎÒÓĞÒ»Àà", "class");
-	replace_all_distinct(file, "¹«¿ª", "public");
-	replace_all_distinct(file, "±£»¤", "protected");
-	replace_all_distinct(file, "ÈçÏÂ", ":");
-	replace_all_distinct(file, "Òş²Ø", "private");
-	replace_all_distinct(file, "×÷ÓÃÓòµÄ", "::");
-	replace_all_distinct(file, "·ÖÖ§¡¸", "switch(");
-	replace_all_distinct(file, "¡¹ÓĞÈçÏÂÇé¿ö", ")");
-	replace_all_distinct(file, "·ÖÖ§Çé¿ö", "case ");
-	replace_all_distinct(file, "Ìø³ö", "break");
-	replace_all_distinct(file, "¼ÌĞø", "continue");
-	replace_all_distinct(file, "¾²Ì¬", "const");
-	replace_all_distinct(file, "×Ô¶¯", "auto");
-	replace_all_distinct(file, "Ä¬ÈÏ", "default");
-	replace_all_distinct(file, "×ö", "do");
-	replace_all_distinct(file, "Ìø×ª", "goto");
-	replace_all_distinct(file, "Å×³ö", "throw");
-	replace_all_distinct(file, "ÊÔÊÔ", "try");
-	replace_all_distinct(file, "²¶»ñ", "catch");
-	replace_all_distinct(file, "»»ĞĞ", "endl");
-	replace_all_distinct(file, "Êé", "cout <<");
-	replace_all_distinct(file, "¶Á", "cin >>");
-	replace_all_distinct(file, "Åú×¢£º", "//");
-	replace_all_distinct(file, "³¤ÅúÊ¼", "/*");
-	replace_all_distinct(file, "³¤ÅúÖÕ", "*/");
-	replace_all_distinct(file, "È¡·´", "!");
-	replace_all_distinct(file, "Î»·´", "~");
-	replace_all_distinct(file, "Î»Óë", "&");
-	replace_all_distinct(file, "Î»»ò", "|");
-	replace_all_distinct(file, "µÄ", ".");
-	replace_all_distinct(file, "ĞÂ", "new");
-	replace_all_distinct(file, "Ë«Òı¡¸", "\"");
-	replace_all_distinct(file, "¡¹Ë«Òı", "\"");
-	replace_all_distinct(file, "µ¥Òı¡¸", "\'");
-	replace_all_distinct(file, "¡¹µ¥Òı", "\'");
-	replace_all_distinct(file, "¡¸", "");
-	replace_all_distinct(file, "¡¹", "");
+	replace_all_distinct(file, "ç¨‹åºç»“æŸ", "exit(0)");
+	replace_all_distinct(file, "èµ·å§‹", "{");
+	replace_all_distinct(file, "è‡³ç»ˆ", "}");
+	replace_all_distinct(file, "æˆ‘æœ‰ä¸€å‡½æ•°ä¸ºä¸»", "int main(int å‚æ•°é‡, char* å‚æ•°[])");
+	replace_all_distinct(file, "æˆ‘æœ‰ä¸€å‡½æ•°ä¸º", "");
+	replace_all_distinct(file, "æˆ‘æœ‰ä¸€è¨€ï¼Œæ›°", "cout << ");
+	replace_all_distinct(file, "æš‚åœ", "\"pause\"");
+	replace_all_distinct(file, "æˆ‘éœ€ä½¿ç”¨å‘½ä»¤ï¼Œæ›°", "system(");
+	replace_all_distinct(file, "ç«‹å³æ‰§è¡Œ", ")");
+	replace_all_distinct(file, "æˆ‘æœ‰ä¸€æ•°ä¸º", "");
+	replace_all_distinct(file, "æ•´æ•°", "int");
+	replace_all_distinct(file, "å°æ•°", "double");
+	replace_all_distinct(file, "å­—ç¬¦", "char");
+	replace_all_distinct(file, "å­—ä¸²", "string");
+	replace_all_distinct(file, "å¸ƒå°”", "bool");
+	replace_all_distinct(file, "æ— ç±»å‹", "void");
+	replace_all_distinct(file, "é‡å¤ç›´åˆ°ã€Œ", "while(");
+	replace_all_distinct(file, "ã€åœæ­¢", ")");
+	replace_all_distinct(file, "æ‹¬ä»¥", "(");
+	replace_all_distinct(file, "æ­¢", ")");
+	replace_all_distinct(file, "åŠ ", " + ");
+	replace_all_distinct(file, "å‡", " - ");
+	replace_all_distinct(file, "è´Ÿ", "-");
+	replace_all_distinct(file, "ç‚¹", ".");
+	replace_all_distinct(file, "é›¶", "0");
+	replace_all_distinct(file, "ä¸€", "1");
+	replace_all_distinct(file, "äºŒ", "2");
+	replace_all_distinct(file, "ä¸‰", "3");
+	replace_all_distinct(file, "å››", "4");
+	replace_all_distinct(file, "äº”", "5");
+	replace_all_distinct(file, "å…­", "6");
+	replace_all_distinct(file, "ä¸ƒ", "7");
+	replace_all_distinct(file, "å…«", "8");
+	replace_all_distinct(file, "ä¹", "9");
+	replace_all_distinct(file, "å", "10");
+	replace_all_distinct(file, "ç™¾", "100");
+	replace_all_distinct(file, "åƒ", "1000");
+	replace_all_distinct(file, "ä¸‡", "10000");
+	replace_all_distinct(file, "åä¸‡", "100000");
+	replace_all_distinct(file, "ç™¾ä¸‡", "1000000");
+	replace_all_distinct(file, "åƒä¸‡", "10000000");
+	replace_all_distinct(file, "äº¿", "100000000");
+	replace_all_distinct(file, "åäº¿", "1000000000");
+	replace_all_distinct(file, "ç™¾äº¿", "10000000000");
+	replace_all_distinct(file, "åƒäº¿", "100000000000");
+	replace_all_distinct(file, "å…†", "100000000000");
+	replace_all_distinct(file, "ä¹˜", " * ");
+	replace_all_distinct(file, "é™¤", " / ");
+	replace_all_distinct(file, "èµ‹ä»¥", " = ");
+	replace_all_distinct(file, "èµ‹", " = ");
+	replace_all_distinct(file, "ä¹ƒå¾—", "return ");
+	replace_all_distinct(file, "åœ°å€ä¹‹", "&");
+	replace_all_distinct(file, "åœ°å€", "&");
+	replace_all_distinct(file, "çš„æŒ‡é’ˆ", "*");
+	replace_all_distinct(file, "æŒ‡é’ˆ", "*");
+	replace_all_distinct(file, "å¥å®Œ", ";");
+	replace_all_distinct(file, "éš”", ",");
+	replace_all_distinct(file, "æ›°", " ");
+	replace_all_distinct(file, "ï¼Œ", "");
+	replace_all_distinct(file, "ã€‚", ";");
+	replace_all_distinct(file, "ç©ºä¸²", "\"\"");
+	replace_all_distinct(file, "è‹¥", "if(");
+	replace_all_distinct(file, "è€…", ")");
+	replace_all_distinct(file, "åˆ™", "else ");
+	replace_all_distinct(file, "å¤§äº", ">");
+	replace_all_distinct(file, "å°äº", "<");
+	replace_all_distinct(file, "å¤§ç­‰", ">=");
+	replace_all_distinct(file, "å°ç­‰", "<=");
+	replace_all_distinct(file, "ä¸ç­‰äº", "!=");
+	replace_all_distinct(file, "ç­‰äº", "==");
+	replace_all_distinct(file, "å¹¶ä¸”", "&&");
+	replace_all_distinct(file, "æˆ–è€…", "||");
+	replace_all_distinct(file, "æ¨¡ä»¥", "%");
+	replace_all_distinct(file, "ä½¿ç”¨", "using");
+	replace_all_distinct(file, "åå­—ç©ºé—´", "namespace");
+	replace_all_distinct(file, "æˆ‘æœ‰ä¸€ç»“æ„ä½“", "struct");
+	replace_all_distinct(file, "æˆ‘æœ‰ä¸€ç±»", "class");
+	replace_all_distinct(file, "å…¬å¼€", "public");
+	replace_all_distinct(file, "ä¿æŠ¤", "protected");
+	replace_all_distinct(file, "å¦‚ä¸‹", ":");
+	replace_all_distinct(file, "éšè—", "private");
+	replace_all_distinct(file, "ä½œç”¨åŸŸçš„", "::");
+	replace_all_distinct(file, "åˆ†æ”¯ã€Œ", "switch(");
+	replace_all_distinct(file, "ã€æœ‰å¦‚ä¸‹æƒ…å†µ", ")");
+	replace_all_distinct(file, "åˆ†æ”¯æƒ…å†µ", "case ");
+	replace_all_distinct(file, "è·³å‡º", "break");
+	replace_all_distinct(file, "ç»§ç»­", "continue");
+	replace_all_distinct(file, "é™æ€", "const");
+	replace_all_distinct(file, "è‡ªåŠ¨", "auto");
+	replace_all_distinct(file, "é»˜è®¤", "default");
+	replace_all_distinct(file, "åš", "do");
+	replace_all_distinct(file, "è·³è½¬", "goto");
+	replace_all_distinct(file, "æŠ›å‡º", "throw");
+	replace_all_distinct(file, "è¯•è¯•", "try");
+	replace_all_distinct(file, "æ•è·", "catch");
+	replace_all_distinct(file, "æ¢è¡Œ", "endl");
+	replace_all_distinct(file, "ä¹¦", "cout <<");
+	replace_all_distinct(file, "è¯»", "cin >>");
+	replace_all_distinct(file, "æ‰¹æ³¨ï¼š", "//");
+	replace_all_distinct(file, "é•¿æ‰¹å§‹", "/*");
+	replace_all_distinct(file, "é•¿æ‰¹ç»ˆ", "*/");
+	replace_all_distinct(file, "å–å", "!");
+	replace_all_distinct(file, "ä½å", "~");
+	replace_all_distinct(file, "ä½ä¸", "&");
+	replace_all_distinct(file, "ä½æˆ–", "|");
+	replace_all_distinct(file, "çš„", ".");
+	replace_all_distinct(file, "æ–°", "new");
+	replace_all_distinct(file, "åŒå¼•ã€Œ", "\"");
+	replace_all_distinct(file, "ã€åŒå¼•", "\"");
+	replace_all_distinct(file, "å•å¼•ã€Œ", "\'");
+	replace_all_distinct(file, "ã€å•å¼•", "\'");
+	replace_all_distinct(file, "ã€Œ", "");
+	replace_all_distinct(file, "ã€", "");
 	cout << file;
+	infile.close();
+	fclose(stdout);
 	return 0;
 }
