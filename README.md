@@ -2,7 +2,7 @@
 **by lzexmpoane**
 
 此乃测试版。This is a beta version.  
-**Version: Beta 1.4**  
+**Version: Beta 1.41**  
 **Made use C++**
 
 ## 序 / Preface

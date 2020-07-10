@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
 {
 	ifstream infile;
 	string sccf;
-	if (argc == 1 || argc >= 5) { cout << "参数给多会吃不消，不足会吃不饱哦！   The parameters cannot be excessive or insufficient!"; return 0; }
+	if (argc <= 2 || argc >= 5) { cout << "参数给多会吃不消，不足会吃不饱哦！   The parameters cannot be excessive or insufficient!"; return 0; }
 	infile.open(argv[1], ios::in);
 	FILE* stream;
 	sccf = "";
@@ -82,6 +82,11 @@ int main(int argc, char* argv[])
 	buf << infile.rdbuf();
 	file = buf.str();
 	cout << head;
+	replace_all_distinct(file, "本地头文件", "#include \"");
+	replace_all_distinct(file, "引用至本程序", "\"");
+	replace_all_distinct(file, "引用头文件", "#include <");
+	replace_all_distinct(file, "至本程序", ">");
+	replace_all_distinct(file, "吾", "我");
 	replace_all_distinct(file, "假", "false");
 	replace_all_distinct(file, "真", "true");
 	replace_all_distinct(file, "程序结束", "exit(0)");
