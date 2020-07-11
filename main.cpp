@@ -71,7 +71,8 @@ int main(int argc, char* argv[])
 {
 	ifstream infile;
 	string sccf;
-	if (argc <= 2 || argc >= 5) { cout << "参数给多会吃不消，不足会吃不饱哦！   The parameters cannot be excessive or insufficient!"; return 0; }
+	if (argc <= 2) { cout << "参数不足会吃不饱哦！   The parameters is insufficient!"; return 0; }
+	if (argc >= 5) { cout << "参数给多会吃不消哦！   The parameters is excessive!"; return 0; }
 	infile.open(argv[1], ios::in);
 	FILE* stream;
 	sccf = "";
