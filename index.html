@@ -5,25 +5,26 @@
 </head>
 <html>
     <div id="bg">
-        <div id="bg-inner" style="wtop: -250px; left: 50px;">
-            <img src=".\img20200713s1.jpg" width="100%">
+        <div id="bg-inner" style="top: -250px; left: 50px;">
+            <img src=".\src\img20200713s1.jpg" width="100%">
         </div>
     </div>
     <div id="title-box">
-        <div id="title1">文程 / Chinese-lang</div>
+        <div id="title1">中程 / Chinese-lang</div>
         <div id="title2">编程语言 Programming Language for the Chinese</div>
     </div>
     <div id="content-box">
         <div id="content">
-            <h1>本 程序 / 网站 致敬 <a href="https://wy-lang.org/" target="_blank">wenyan-lang</a></h1>
+            <h1 style="color:red;">WARRING: 因语法更新，所有的样例文件都需重写</h1>
+            <h1>本 程序/网站 致敬 <a href="https://wy-lang.org/" target="_blank">wenyan-lang</a></h1>
             <h1>并且使用了 <a href="https://wy-lang.org/" target="_blank">wenyan-lang</a> 的CSS，但非商业用途</h1>
             <h1>（别打，别打，对不起，对不起，别打</h1>
-            <p>Made use C++</p>
-            <p>View the <a href="https://github.com/lzexmpoane/chinese-lang">source code</a>.</p>
+            <p>Made with C++</p>
+            <p><a href="https://github.com/lzexmpoane/chinese-lang">View the source code</a></p>
             <h1>Preface</h1>
             <hr>
             <p>君可至此，应为国人。然则，犹用英文（因为是国际的）。</p>
-            <p>劝国人：此程序实为劝君勿用中文编程，无意，且无用。</p>
+            <p>劝：此程式实为劝君勿用中文编程，无意，且无用。</p>
             <p>这里有一个B乎的问答：<a href="https://www.zhihu.com/question/19770358">https://www.zhihu.com/question/19770358</a>可以看看。</p>
             <h1>Install</h1>
             <hr>
@@ -39,7 +40,7 @@
     我有一言，曰「双引「问天地好在。」双引」。
     乃得 零。
 至终</code></pre>
-            <h1>Syntax</h1>
+            <h1>Syntax （规则大修改，完整语法，源码，看源码好不好）</h1>
             <hr>
             <table border="1">
                 <tr>
@@ -50,25 +51,29 @@
                     <td>。</td>
                     <td>;</td>
                 </tr>
-                <tr>
-                    <td>本地头文件「ｘｘｘ」引用至本程序</td>
+                <tr style="color: red;">
+                    <td>本地头文件「ｘｘｘ」</td>
                     <td>#include "ｘｘｘ"</td>
                 </tr>
-                <tr>
-                    <td>引用头文件「ｘｘｘ」至本程序</td>
+                <tr style="color: red;">
+                    <td>引用头文件「ｘｘｘ」</td>
                     <td>#include &lt;ｘｘｘ&gt;</td>
                 </tr>
-                <tr>
-                    <td>假</td>
+                <tr style="color: red;">
+                    <td>阴</td>
                     <td>false</td>
                 </tr>
-                <tr>
-                    <td>真</td>
+                <tr style="color: red;">
+                    <td>阳</td>
                     <td>true</td>
                 </tr>
                 <tr>
                     <td>程序结束</td>
                     <td>exit(0)</td>
+                </tr>
+                <tr>
+                    <td>乃得</td>
+                    <td>return</td>
                 </tr>
                 <tr>
                     <td>起始 ｘｘｘ 至终</td>

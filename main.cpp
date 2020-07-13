@@ -45,7 +45,26 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 {
 	for (string::size_type pos(0); pos != string::npos; pos += new_value.length()) {
 		if ((pos = str.find(old_value, pos)) != string::npos)
-			if (old_value != "双引「" && old_value != "」双引" && old_value != "单引「" && old_value != "」单引")
+		{
+			if (old_value == "本地头文件")
+			{
+				int pos1;
+				pos1 = str.find("」", pos);
+				str.replace(pos1, 2, "\"");
+			}
+			else if (old_value == "引用头文件")
+			{
+				int pos1;
+				pos1 = str.find("」", pos);
+				str.replace(pos1, 2, ">");
+			}
+			else if (old_value == "我需调用控制台命令，曰")
+			{
+				int pos1;
+				pos1 = str.find("」", pos);
+				str.replace(pos1, 2, ")");
+			}
+			else if (old_value != "双引「" && old_value != "」双引" && old_value != "单引「" && old_value != "」单引")
 			{
 				int pos1, pos2;
 				pos1 = str.find("双引「", pos);
@@ -63,6 +82,7 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 				}
 			}
 			else str.replace(pos, old_value.length(), new_value);
+		}
 		else break;
 	}
 	return str;
@@ -82,23 +102,24 @@ int main(int argc, char* argv[])
 	stringstream buf;
 	buf << infile.rdbuf();
 	file = buf.str();
-	cout << head;
 	replace_all_distinct(file, "本地头文件", "#include \"");
-	replace_all_distinct(file, "引用至本程序", "\"");
 	replace_all_distinct(file, "引用头文件", "#include <");
-	replace_all_distinct(file, "至本程序", ">");
+	replace_all_distinct(file, "做", "do{");
+	replace_all_distinct(file, "到这里开始满足条件「", "}while(");
+	replace_all_distinct(file, "」继续循环", ")");
 	replace_all_distinct(file, "吾", "我");
-	replace_all_distinct(file, "假", "false");
-	replace_all_distinct(file, "真", "true");
+	replace_all_distinct(file, "阴", "false");
+	replace_all_distinct(file, "阳", "true");
 	replace_all_distinct(file, "程序结束", "exit(0)");
 	replace_all_distinct(file, "起始", "{");
+	replace_all_distinct(file, "云云。", "}");
+	replace_all_distinct(file, "云云", "}");
 	replace_all_distinct(file, "至终", "}");
 	replace_all_distinct(file, "我有一函数为主", "int main(int 参数量, char* 参数[])");
 	replace_all_distinct(file, "我有一函数为", "");
 	replace_all_distinct(file, "我有一言，曰", "cout << ");
 	replace_all_distinct(file, "暂停", "\"pause\"");
-	replace_all_distinct(file, "我需使用命令，曰", "system(");
-	replace_all_distinct(file, "立即执行", ")");
+	replace_all_distinct(file, "我需调用控制台命令，曰", "system(");
 	replace_all_distinct(file, "我有一数为", "");
 	replace_all_distinct(file, "我有一列为", "");
 	replace_all_distinct(file, "其中有", "[");
@@ -114,9 +135,9 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "布尔", "bool");
 	replace_all_distinct(file, "无型", "void");
 	replace_all_distinct(file, "重复直到「", "while(!(");
-	replace_all_distinct(file, "」停止", "))");
+	replace_all_distinct(file, "」停止", ")){");
 	replace_all_distinct(file, "若表达式「", "while(");
-	replace_all_distinct(file, "」成立，则继续", ")");
+	replace_all_distinct(file, "」成立，则继续", "){");
 	replace_all_distinct(file, "括以", "(");
 	replace_all_distinct(file, "止", ")");
 	replace_all_distinct(file, "加", " + ");
@@ -184,20 +205,20 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "分支「", "switch(");
 	replace_all_distinct(file, "」有如下情况", ")");
 	replace_all_distinct(file, "分支情况", "case ");
-	replace_all_distinct(file, "跳出", "break");
-	replace_all_distinct(file, "继续", "continue");
+	replace_all_distinct(file, "乃止也", "break");
+	replace_all_distinct(file, "乃继续", "continue");
 	replace_all_distinct(file, "静态", "const");
 	replace_all_distinct(file, "自动", "auto");
 	replace_all_distinct(file, "默认", "default");
-	replace_all_distinct(file, "做", "do");
-	replace_all_distinct(file, "跳转", "goto");
-	replace_all_distinct(file, "抛出", "throw");
-	replace_all_distinct(file, "试试", "try");
-	replace_all_distinct(file, "捕获", "catch");
+	replace_all_distinct(file, "乃跳转", "goto");
+	replace_all_distinct(file, "乃抛出", "throw");
+	replace_all_distinct(file, "乃试也", "try");
+	replace_all_distinct(file, "捕获结果", "catch");
 	replace_all_distinct(file, "换行", "endl");
 	replace_all_distinct(file, "书", "cout << ");
 	replace_all_distinct(file, "读至", "cin >> ");
 	replace_all_distinct(file, "批注：", "//");
+	replace_all_distinct(file, "批曰。", "//");
 	replace_all_distinct(file, "长批始", "/*");
 	replace_all_distinct(file, "长批终", "*/");
 	replace_all_distinct(file, "取反", "!");
@@ -212,6 +233,7 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "」单引", "\'");
 	replace_all_distinct(file, "「", "");
 	replace_all_distinct(file, "」", "");
+	cout << head;
 	cout << file;
 	infile.close();
 	fclose(stdout);
