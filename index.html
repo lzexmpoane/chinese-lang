@@ -1,163 +1,128 @@
 <head>
     <title>Chinese-lang</title>
+    <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/96aad6d5a8950ee61d39737065327a1216af90de/assets/css/site.css'/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/vs.min.css">
 </head>
 <html>
-    <p style="font-size: 50px;text-align: center;">文程 / Chinese-lang</p>
-    <p style="font-size: 40px;text-align: center;color: red;">即将修改大量语法规则，所以。。你懂得</p>
-    <p>Made use C++</p>
-    <p>View the <a href="https://github.com/lzexmpoane/chinese-lang">source code</a>.</p>
-    <h2>Preface</h2>
-    <p>君可至此，应为国人。然则，犹用英文（因为是国际的）。</p>
-    <p>劝国人：此程序实为劝君勿用中文编程，无意，且无用。</p>
-    <p>这里有一个B乎的问答：<a href="https://www.zhihu.com/question/19770358">https://www.zhihu.com/question/19770358</a>可以看看。</p>
-    <h2>Syntax</h2>
-    <h3>Example:</h3>
-    <p>万年不变的'Hello World!' / 'Hello World!'</p>
-    <p style="color: gray;">——————————————————————————————————</p>
-    <pre><code>批注：此程序为书「问天地好在。」
+    <div id="bg">
+        <div id="bg-inner" style="wtop: -250px; left: 50px;">
+            <img src=".\img20200713s1.jpg" width="100%">
+        </div>
+    </div>
+    <div id="title-box">
+        <div id="title1">文程 / Chinese-lang</div>
+        <div id="title2">编程语言 Programming Language for the Chinese</div>
+    </div>
+    <div id="content-box">
+        <div id="content">
+            <h1>本 程序 / 网站 致敬 <a href="https://wy-lang.org/" target="_blank">wenyan-lang</a></h1>
+            <h1>并且使用了 <a href="https://wy-lang.org/" target="_blank">wenyan-lang</a> 的CSS，但非商业用途</h1>
+            <h1>（别打，别打，对不起，对不起，别打</h1>
+            <p>Made use C++</p>
+            <p>View the <a href="https://github.com/lzexmpoane/chinese-lang">source code</a>.</p>
+            <h1>Preface</h1>
+            <hr>
+            <p>君可至此，应为国人。然则，犹用英文（因为是国际的）。</p>
+            <p>劝国人：此程序实为劝君勿用中文编程，无意，且无用。</p>
+            <p>这里有一个B乎的问答：<a href="https://www.zhihu.com/question/19770358">https://www.zhihu.com/question/19770358</a>可以看看。</p>
+            <h1>Install</h1>
+            <hr>
+            <p>Check <a href=".\Debug\CN-lang.exe" download="CN-lang.exe">here</a> to download CN-lang.exe .</p>
+            <p>Command:</p>
+            <p>EXEfile directory + .cnlang file directory + Output directory + Output file name</p>
+            <h1>Example:</h1>
+            <hr>
+            <p>万年不变的'Hello World!' / 'Hello World!' :</p>
+            <pre><code>批注：此程序为书「问天地好在。」
 我有一函数为主
 起始
-	我有一言，曰「双引「问天地好在。」双引」。
-	乃得 零。
-至终</code></pre>
-    <p style="color: gray;">——————————————————————————————————</p>
-    <p>八皇后问题 / Eight queens question</p>
-    <p style="color: gray;">——————————————————————————————————</p>
-<pre><code>批注：捌皇后问题
-我有一列为整数，曰「答案」，其中有「十」组数。
-我有一数为整数，曰「计数」。
-我有一列为布尔，曰「行」，其中有「「二」乘「十」」组数。
-我有一列为布尔，曰「列壹」，其中有「「二」乘「十」」组数。
-我有一列为布尔，曰「列贰」，其中有「「二」乘「十」」组数。
-我有一函数为无型，曰「输出」 括以 止
-起始
-    「计数」赋以「「计数」加「一」」。
-    我有一数为整数，曰「临时壹」。
-    「临时壹」赋以「一」。
-    若表达式「「临时壹」 小等 「八」」成立，则继续
-    起始
-        书「欲访问「答案」之下标「临时壹」为几何」。
-        书「空格」。
-        「临时壹」赋以「「临时壹」加「一」」。
-    至终
-    书「换行」。
-至终
-
-我有一函数为无型，曰「捌皇后问题」 括以 我有一数为整数，曰「步」 止
-起始
-    我有一数为整数，曰「临时壹」。
-    「临时壹」赋以「一」。
-    若表达式「「临时壹」 小等 「八」」成立，则继续
-    起始
-        若「欲访问「行」之下标「临时壹」为几何 等于 假 并且 欲访问「列壹」之下标「「步」加「临时壹」」为几何 等于 假 并且 欲访问「列贰」之下标「「八」加「步」减「临时壹」」为几何 等于 假」者
-        起始
-            「欲访问「答案」之下标「步」为几何」 赋 「临时壹」。
-            若「「步」等于「八」」者
-            起始
-                输出 括以 止。
-            至终
-            「欲访问「行」之下标「临时壹」为几何」 赋 「真」。
-            「欲访问「列壹」之下标「「步」加「临时壹」」为几何」 赋 「真」。
-            「欲访问「列贰」之下标「「八」加「步」减「临时壹」」为几何」 赋 「真」。
-            捌皇后问题 括以「步」加「一」 止。
-            「欲访问「行」之下标「临时壹」为几何」 赋 「假」。
-            「欲访问「列壹」之下标「「步」加「临时壹」」为几何」 赋 「假」。
-            「欲访问「列贰」之下标「「八」加「步」减「临时壹」」为几何」 赋 「假」。
-        至终
-        「临时壹」赋以「「临时壹」加「一」」。
-    至终
-至终
-
-我有一函数为主
-起始
-    「计数」赋以「零」。
-    捌皇后问题 括以 一 止。
-    书「计数」。
-    书「换行」。
+    我有一言，曰「双引「问天地好在。」双引」。
     乃得 零。
 至终</code></pre>
-    <p style="color: gray;">——————————————————————————————————</p>
-    <h3>Syntax:</h3>
-    <table border="1">
-        <tr>
-            <th>CN-lang</th>
-            <th>C++</th>
-        </tr>
-        <tr>
-            <td>。</td>
-            <td>;</td>
-        </tr>
-        <tr>
-            <td>本地头文件「ｘｘｘ」引用至本程序</td>
-            <td>#include "ｘｘｘ"</td>
-        </tr>
-        <tr>
-            <td>引用头文件「ｘｘｘ」至本程序</td>
-            <td>#include &lt;ｘｘｘ&gt;</td>
-        </tr>
-        <tr>
-            <td>假</td>
-            <td>false</td>
-        </tr>
-        <tr>
-            <td>真</td>
-            <td>true</td>
-        </tr>
-        <tr>
-            <td>程序结束</td>
-            <td>exit(0)</td>
-        </tr>
-        <tr>
-            <td>起始 ｘｘｘ 至终</td>
-            <td>{ｘｘｘ}</td>
-        </tr>
-        <tr>
-            <td>我有一函数为主</td>
-            <td>int main(int 参数量, char* 参数[])</td>
-        </tr>
-        <tr>
-            <td>我有一函数为ｘｘ，曰「ｘｘｘ」 括以 ｘｘｘｘ 止</td>
-            <td>ｘｘ　ｘｘｘ(ｘｘｘｘ)</td>
-        </tr>
-        <tr>
-            <td>我有一数为ｘｘ，曰「ｘｘｘ」</td>
-            <td>ｘｘ ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>我有一言，曰「ｘｘｘ」</td>
-            <td>cout &lt;&lt; ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>书 ｘｘｘ</td>
-            <td>cout &lt;&lt; ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>读至 ｘｘｘ</td>
-            <td>cin &gt;&gt; ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>ｘｘｘ 加 ｘｘｘ</td>
-            <td>ｘｘｘ + ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>ｘｘｘ 减 ｘｘｘ</td>
-            <td>ｘｘｘ - ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>ｘｘｘ 乘 ｘｘｘ</td>
-            <td>ｘｘｘ * ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>ｘｘｘ 除 ｘｘｘ</td>
-            <td>ｘｘｘ / ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>ｘｘｘ点ｘｘｘ</td>
-            <td>ｘｘｘ.ｘｘｘ</td>
-        </tr>
-        <tr>
-            <td>...</td>
-            <td>...</td>
-        </tr>
-    </table>
+            <h1>Syntax</h1>
+            <hr>
+            <table border="1">
+                <tr>
+                    <th>CN-lang</th>
+                    <th>C++</th>
+                </tr>
+                <tr>
+                    <td>。</td>
+                    <td>;</td>
+                </tr>
+                <tr>
+                    <td>本地头文件「ｘｘｘ」引用至本程序</td>
+                    <td>#include "ｘｘｘ"</td>
+                </tr>
+                <tr>
+                    <td>引用头文件「ｘｘｘ」至本程序</td>
+                    <td>#include &lt;ｘｘｘ&gt;</td>
+                </tr>
+                <tr>
+                    <td>假</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>真</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>程序结束</td>
+                    <td>exit(0)</td>
+                </tr>
+                <tr>
+                    <td>起始 ｘｘｘ 至终</td>
+                    <td>{ｘｘｘ}</td>
+                </tr>
+                <tr>
+                    <td>我有一函数为主</td>
+                    <td>int main(int 参数量, char* 参数[])</td>
+                </tr>
+                <tr>
+                    <td>我有一函数为ｘｘ，曰「ｘｘｘ」 括以 ｘｘｘｘ 止</td>
+                    <td>ｘｘ　ｘｘｘ(ｘｘｘｘ)</td>
+                </tr>
+                <tr>
+                    <td>我有一数为ｘｘ，曰「ｘｘｘ」</td>
+                    <td>ｘｘ ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>我有一言，曰「ｘｘｘ」</td>
+                    <td>cout &lt;&lt; ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>书 ｘｘｘ</td>
+                    <td>cout &lt;&lt; ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>读至 ｘｘｘ</td>
+                    <td>cin &gt;&gt; ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>ｘｘｘ 加 ｘｘｘ</td>
+                    <td>ｘｘｘ + ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>ｘｘｘ 减 ｘｘｘ</td>
+                    <td>ｘｘｘ - ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>ｘｘｘ 乘 ｘｘｘ</td>
+                    <td>ｘｘｘ * ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>ｘｘｘ 除 ｘｘｘ</td>
+                    <td>ｘｘｘ / ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>ｘｘｘ点ｘｘｘ</td>
+                    <td>ｘｘｘ.ｘｘｘ</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </html>

@@ -21,9 +21,6 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="cn_soruce.cnlang" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{BAC05BEB-7909-492D-BDEF-26E9B007436C}</ProjectGuid>
