@@ -30,7 +30,7 @@
             <hr>
             <p>Check <a href=".\Debug\CN-lang.exe" download="CN-lang.exe">here</a> to download CN-lang.exe .</p>
             <p>Command:</p>
-            <p>EXEfile directory + .cnlang file directory + Output directory + Output file name</p>
+            <p>EXEfile directory & file name + .cnlang file directory & file name + Output directory + Output file name</p>
             <h1>Example:</h1>
             <hr>
             <p>万年不变的'Hello World!' / 'Hello World!' :</p>
@@ -43,90 +43,27 @@
             <h1>Syntax （规则大修改，完整语法，源码，看源码好不好）</h1>
             <hr>
             <table border="1">
-                <tr>
-                    <th>CN-lang</th>
-                    <th>C++</th>
-                </tr>
-                <tr>
-                    <td>。</td>
-                    <td>;</td>
-                </tr>
-                <tr style="color: red;">
-                    <td>本地头文件「ｘｘｘ」</td>
-                    <td>#include "ｘｘｘ"</td>
-                </tr>
-                <tr style="color: red;">
-                    <td>引用头文件「ｘｘｘ」</td>
-                    <td>#include &lt;ｘｘｘ&gt;</td>
-                </tr>
-                <tr style="color: red;">
-                    <td>阴</td>
-                    <td>false</td>
-                </tr>
-                <tr style="color: red;">
-                    <td>阳</td>
-                    <td>true</td>
-                </tr>
-                <tr>
-                    <td>程序结束</td>
-                    <td>exit(0)</td>
-                </tr>
-                <tr>
-                    <td>乃得</td>
-                    <td>return</td>
-                </tr>
-                <tr>
-                    <td>起始 ｘｘｘ 至终</td>
-                    <td>{ｘｘｘ}</td>
-                </tr>
-                <tr>
-                    <td>我有一函数为主</td>
-                    <td>int main(int 参数量, char* 参数[])</td>
-                </tr>
-                <tr>
-                    <td>我有一函数为ｘｘ，曰「ｘｘｘ」 括以 ｘｘｘｘ 止</td>
-                    <td>ｘｘ　ｘｘｘ(ｘｘｘｘ)</td>
-                </tr>
-                <tr>
-                    <td>我有一数为ｘｘ，曰「ｘｘｘ」</td>
-                    <td>ｘｘ ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>我有一言，曰「ｘｘｘ」</td>
-                    <td>cout &lt;&lt; ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>书 ｘｘｘ</td>
-                    <td>cout &lt;&lt; ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>读至 ｘｘｘ</td>
-                    <td>cin &gt;&gt; ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>ｘｘｘ 加 ｘｘｘ</td>
-                    <td>ｘｘｘ + ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>ｘｘｘ 减 ｘｘｘ</td>
-                    <td>ｘｘｘ - ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>ｘｘｘ 乘 ｘｘｘ</td>
-                    <td>ｘｘｘ * ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>ｘｘｘ 除 ｘｘｘ</td>
-                    <td>ｘｘｘ / ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>ｘｘｘ点ｘｘｘ</td>
-                    <td>ｘｘｘ.ｘｘｘ</td>
-                </tr>
-                <tr>
-                    <td>...</td>
-                    <td>...</td>
-                </tr>
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr><td>。</td><td>;</td></tr>
+                <tr style="color: red;"><td>本地头文件「ｘｘｘ」</td><td>#include "ｘｘｘ"</td></tr>
+                <tr style="color: red;"><td>引用头文件「ｘｘｘ」</td><td>#include &lt;ｘｘｘ&gt;</td></tr>
+                <tr style="color: red;"><td>阴</td><td>false</td></tr>
+                <tr style="color: red;"><td>阳</td> <td>true</td></tr>
+                <tr><td>程序结束</td><td>exit(0)</td></tr>
+                <tr><td>乃得</td><td>return</td></tr>
+                <tr><td>起始 ｘｘｘ 至终</td><td>{ｘｘｘ}</td></tr>
+                <tr><td>我有一函数为主</td><td>int main(int 参数量, char* 参数[])</td></tr>
+                <tr><td>我有一函数为ｘｘ，曰「ｘｘｘ」 括以 ｘｘｘｘ 止</td><td>ｘｘ　ｘｘｘ(ｘｘｘｘ)</td></tr>
+                <tr><td>我有一数为ｘｘ，曰「ｘｘｘ」</td><td>ｘｘ ｘｘｘ</td></tr>
+                <tr><td>我有一言，曰「ｘｘｘ」</td><td>cout &lt;&lt; ｘｘｘ</td></tr>
+                <tr><td>书 ｘｘｘ</td><td>cout &lt;&lt; ｘｘｘ</td></tr>
+                <tr><td>读至 ｘｘｘ</td><td>cin &gt;&gt; ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 加 ｘｘｘ</td><td>ｘｘｘ + ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 减 ｘｘｘ</td><td>ｘｘｘ - ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 乘 ｘｘｘ</td><td>ｘｘｘ * ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 除 ｘｘｘ</td><td>ｘｘｘ / ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ点ｘｘｘ</td><td>ｘｘｘ.ｘｘｘ</td></tr>
+                <tr><td>...</td><td>...</td></tr>
             </table>
         </div>
     </div>
