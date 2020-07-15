@@ -20,51 +20,177 @@
             <h1>还用了<a href="https://wy-lang.org/" target="_blank">wenyan-lang</a>的CSS，但非商业用途（link都是wenyan-lang的。。cbyl</h1>
             <h1>（别打，别打，对不起，对不起，别打</h1>
             <p>Made with C++</p>
-            <p><a href="https://github.com/lzexmpoane/chinese-lang">View the source code</a></p>
+            <p><strong>Last version: <span style="color: red;">Beta v1.7</span></strong></p>
+            <p><a href="https://github.com/lzexmpoane/chinese-lang" target="_blank">View the source code</a></p>
             <h1>Preface</h1>
             <hr>
             <p>君可至此，应为国人。然则，犹用英文（因为是国际的）。</p>
             <p>劝：此程式实为劝君勿用中文编程，无意，且无用。</p>
             <p>这里有一个B乎的问答：<a href="https://www.zhihu.com/question/19770358">https://www.zhihu.com/question/19770358</a>可以看看。</p>
-            <h1>Install</h1>
+            <h1>Install & Compile</h1>
             <hr>
             <p>Check <a href=".\Debug\CN-lang.exe" download="CN-lang.exe">here</a> to download CN-lang.exe .</p>
-            <p>Command:</p>
+            <p>Compile command:</p>
             <p>EXEfile directory & file name + .cnlang file directory & file name + Output directory + Output file name</p>
             <h1>Example:</h1>
             <hr>
-            <p>万年不变的'Hello World!' / 'Hello World!' :</p>
-            <pre><code>批注：此程序为书「问天地好在。」
+            <h2>天地，好在否！/ HELLO WORLD</h2>
+            <table class="tryit" data-prgm="helloworld+"><tbody><tr>
+                <td class="in-box" valign="top"><pre contenteditable="true">批注：此程序为书「问天地好在。」
 我有一函数为主
 起始
     我有一言，曰「双引「问天地好在。」双引」。
     乃得 零。
-至终</code></pre>
-            <h1>Syntax （规则大修改，完整语法，源码，看源码好不好）</h1>
+至终</pre></td><td class="out-box" valign="top"><div class="out"></div></td>
+              </tr></tbody></table>
+            <h1>Syntax Cheatsheet （可能有误，正确语法看源码）</h1>
             <hr>
+            <h3>Import</h3>
+            <table border="1">
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr style="color: white;background-color: red;"><td>本地头文件「ｘｘｘ」</td><td>#include "ｘｘｘ"</td></tr>
+                <tr style="color: white;background-color: red;"><td>引用头文件「ｘｘｘ」</td><td>#include &lt;ｘｘｘ&gt;</td></tr>
+            </table>
+            <h3>Symbol</h3>
             <table border="1">
                 <tr><th>CN-lang</th><th>C++</th></tr>
                 <tr><td>。</td><td>;</td></tr>
-                <tr style="color: red;"><td>本地头文件「ｘｘｘ」</td><td>#include "ｘｘｘ"</td></tr>
-                <tr style="color: red;"><td>引用头文件「ｘｘｘ」</td><td>#include &lt;ｘｘｘ&gt;</td></tr>
-                <tr style="color: red;"><td>阴</td><td>false</td></tr>
-                <tr style="color: red;"><td>阳</td> <td>true</td></tr>
-                <tr><td>程序结束</td><td>exit(0)</td></tr>
-                <tr><td>乃得</td><td>return</td></tr>
+                <tr><td>句完</td><td>;</td></tr>
+                <tr><td>隔</td><td>，</td></tr>
+                <tr><td>换行</td><td>endl</td></tr>
+                <tr><td>「ｘｘｘ」</td><td>ｘｘｘ</td></tr>
+                <tr><td>单引「ｘｘｘ」单引</td><td>'ｘｘｘ'</td></tr>
+                <tr><td>双引「ｘｘｘ」双引</td><td>"ｘｘｘ"</td></tr>
+                <tr><td>空串</td><td>""</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>空符</td><td>''</td></tr>
+                <tr><td>括以 ｘｘｘ 止</td><td>(ｘｘｘ)</td></tr>
+                <tr><td>欲访问「ｘｘ」之下标「ｘｘｘ」为几何</td><td>ｘｘ[ｘｘｘ]</td></tr>
                 <tr><td>起始 ｘｘｘ 至终</td><td>{ｘｘｘ}</td></tr>
-                <tr><td>我有一函数为主</td><td>int main(int 参数量, char* 参数[])</td></tr>
-                <tr><td>我有一函数为ｘｘ，曰「ｘｘｘ」 括以 ｘｘｘｘ 止</td><td>ｘｘ　ｘｘｘ(ｘｘｘｘ)</td></tr>
+            </table>
+            <h3>Variables</h3>
+            <table border="1">
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr style="color: white;background-color: red;"><td>阴</td><td>false</td></tr>
+                <tr style="color: white;background-color: red;"><td>阳</td> <td>true</td></tr>
+                <tr><td>静态</td><td>const</td></tr>
+                <tr><td>自动</td><td>auto</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>符号</td><td>signed</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>无符号</td><td>unsigned</td></tr>
+                <tr><td>整数</td><td>int</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>长整数</td><td>long</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>长长整数</td><td>long long</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>浮点数</td><td>float</td></tr>
+                <tr><td>小数</td><td>double</td></tr>
+                <tr><td>字符</td><td>char</td></tr>
+                <tr><td>字串</td><td>string</td></tr>
+                <tr><td>布尔</td><td>bool</td></tr>
+                <tr><td>无型</td><td>void</td></tr>
                 <tr><td>我有一数为ｘｘ，曰「ｘｘｘ」</td><td>ｘｘ ｘｘｘ</td></tr>
-                <tr><td>我有一言，曰「ｘｘｘ」</td><td>cout &lt;&lt; ｘｘｘ</td></tr>
-                <tr><td>书 ｘｘｘ</td><td>cout &lt;&lt; ｘｘｘ</td></tr>
-                <tr><td>读至 ｘｘｘ</td><td>cin &gt;&gt; ｘｘｘ</td></tr>
+                <tr><td>我有一结构体，名之曰「ｘｘｘ」起始 ｘｘｘｘ 至终。</td><td>struct ｘｘｘ{ｘｘｘｘ};</td></tr>
+            </table>
+            <h3>Math</h3>
+            <table border="1">
+                <tr><td>ｘｘｘ点ｘｘｘ</td><td>ｘｘｘ.ｘｘｘ</td></tr>
+                <tr><td>一</td><td>1</td></tr>
+                <tr><td>二</td><td>2</td></tr>
+                <tr><td>三</td><td>3</td></tr>
+                <tr><td>四</td><td>4</td></tr>
+                <tr><td>五</td><td>5</td></tr>
+                <tr><td>六</td><td>6</td></tr>
+                <tr><td>七</td><td>7</td></tr>
+                <tr><td>八</td><td>8</td></tr>
+                <tr><td>九</td><td>9</td></tr>
+                <tr><td>十</td><td>10</td></tr>
+                <tr><td>百</td><td>100</td></tr>
+                <tr><td>千</td><td>1000</td></tr>
+                <tr><td>万</td><td>10000</td></tr>
+                <tr><td>十万</td><td>100000</td></tr>
+                <tr><td>百万</td><td>1000000</td></tr>
+                <tr><td>千万</td><td>10000000</td></tr>
+                <tr><td>亿</td><td>100000000</td></tr>
+                <tr><td>十亿</td><td>1000000000</td></tr>
+                <tr><td>百亿</td><td>10000000000</td></tr>
+                <tr><td>千亿</td><td>100000000000</td></tr>
+                <tr><td>兆</td><td>1000000000000</td></tr>
                 <tr><td>ｘｘｘ 加 ｘｘｘ</td><td>ｘｘｘ + ｘｘｘ</td></tr>
                 <tr><td>ｘｘｘ 减 ｘｘｘ</td><td>ｘｘｘ - ｘｘｘ</td></tr>
+                <tr><td>负ｘｘｘ</td><td>-ｘｘｘ</td></tr>
                 <tr><td>ｘｘｘ 乘 ｘｘｘ</td><td>ｘｘｘ * ｘｘｘ</td></tr>
                 <tr><td>ｘｘｘ 除 ｘｘｘ</td><td>ｘｘｘ / ｘｘｘ</td></tr>
-                <tr><td>ｘｘｘ点ｘｘｘ</td><td>ｘｘｘ.ｘｘｘ</td></tr>
-                <tr><td>...</td><td>...</td></tr>
+                <tr><td>ｘｘｘ 模以 ｘｘｘ</td><td>ｘｘｘ & ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 大于 ｘｘｘ</td><td>ｘｘｘ &gt; ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 小于 ｘｘｘ</td><td>ｘｘｘ &lt; ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 等于 ｘｘｘ</td><td>ｘｘｘ == ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 大等 ｘｘｘ</td><td>ｘｘｘ &gt;= ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 小等 ｘｘｘ</td><td>ｘｘｘ &lt;= ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 不等于 ｘｘｘ</td><td>ｘｘｘ != ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 并且 ｘｘｘ</td><td>ｘｘｘ && ｘｘｘ</td></tr>
+                <tr><td>ｘｘｘ 或者 ｘｘｘ</td><td>ｘｘｘ || ｘｘｘ</td></tr>
+                <tr><td>取反 ｘｘｘ</td><td>! ｘｘｘ</td></tr>
+                <tr><td>地址</td><td>&</td></tr>
+                <tr><td>指针</td><td>*</td></tr>
+                <tr><td>取反 ｘｘｘ</td><td>! ｘｘｘ</td></tr>
+                <tr><td>ｘｘ 位反 ｘｘｘ</td><td>ｘｘ ~ ｘｘｘ</td></tr>
+                <tr><td>ｘｘ 位与 ｘｘｘ</td><td>ｘｘ & ｘｘｘ</td></tr>
+                <tr><td>ｘｘ 位或 ｘｘｘ</td><td>ｘｘ | ｘｘｘ</td></tr>
             </table>
+            <h3>Comments</h3>
+            <table border="1">
+                <tr><td>批注：</td><td>//</td></tr>
+                <tr><td>批曰。</td><td>//</td></tr>
+                <tr style="color: white;background-color: red;"><td>长批「ｘｘｘ」长批</td><td>/*ｘｘｘ*/</td></tr>
+            </table>
+            <h3>Read / Output</h3>
+            <table border="1">
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr><td>读至 ｘｘｘ</td><td>cin &gt;&gt; ｘｘｘ</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>我有一言，曰「ｘｘｘ」</td><td>cout &lt;&lt; ｘｘｘ</td></tr>
+                <tr><td>书 ｘｘｘ</td><td>cout &lt;&lt; ｘｘｘ</td></tr>
+            </table>
+            <h3>Function</h3>
+            <table border="1">
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr><td>我有一函数为主</td><td>int main(int 参数量, char* 参数[])</td></tr>
+                <tr><td>程序结束</td><td>exit(0)</td></tr>
+                <tr><td>乃得 ｘｘｘ</td><td>return ｘｘｘ</td></tr>
+                <tr style="color: white;background-color: red;"><td>我有一函数为ｘｘ，曰「ｘｘｘ」 括以 ｘｘｘｘ 止 起始 ｘｘｘｘｘ 至终</td><td>ｘｘ　ｘｘｘ(ｘｘｘｘ){ｘｘｘｘｘ}</td></tr>
+                <tr style="color: white;background-color: red;"><td>我需调用控制台命令，曰「ｘｘｘ」</td><td>system("ｘｘｘ")</td></tr>
+            </table>
+            <h3>Judgment</h3>
+            <table border="1">
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr style="color: white;background-color: red;"><td>乃跳转</td><td>goto</td></tr>
+                <tr><td>若「ｘｘｘ」者 起始 ｘｘｘｘ 至终</td><td>if(ｘｘｘ){ｘｘｘｘ}</td></tr>
+                <tr><td>若「ｘｘｘ」者 起始 ｘｘｘｘ 至终 则 起始 ｘｘｘｘｘ 至终</td><td>if(ｘｘｘ){ｘｘｘｘ}else{ｘｘｘｘｘ}</td></tr>
+                <tr style="color: white;background-color: red;"><td>分支「ｘｘ」有如下情况 起始 分支情况 ｘｘｘ 如下 起始 ｘｘｘｘ 乃止也。 至终 ｘｘｘｘｘ 默认情况 如下 起始 ｘｘｘｘ 乃止也。 至终</td><td>switch(ｘｘ){case ｘｘｘ:{ｘｘｘｘ break;}ｘｘｘｘｘdefault:{ｘｘｘｘ break;}}</td></tr>
+            </table>
+            <h3>Loop</h3>
+            <table border="1">
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr style="color: white;background-color: red;"><td>乃止也</td><td>break</td></tr>
+                <tr style="color: white;background-color: red;"><td>乃继续</td><td>continue</td></tr>
+                <tr style="color: white;background-color: darkgreen;"><td>做「ｘｘｘ」到这里开始满足条件「ｘｘｘｘ」继续循环</td><td>do{ｘｘｘ}while(ｘｘｘｘ);</td></tr>
+                <tr style="color: white;background-color: red;"><td>重复直到「ｘｘｘ」停止「ｘｘｘｘ」云云</td><td>while(!(ｘｘｘ)){ｘｘｘｘ}</td></tr>
+                <tr style="color: white;background-color: red;"><td>若表达式「ｘｘｘ」成立，则继续「ｘｘｘｘ」云云</td><td>while(ｘｘｘ){ｘｘｘｘ}</td></tr>
+            </table>
+            <h3>Class</h3>
+            <table border="1">
+                <tr><th>CN-lang</th><th>C++</th></tr>
+                <tr style="color: white;background-color: red;"><td>我有一类，名之曰「ｘｘｘ」起始 ｘｘｘｘ 公开如下 起始 ｘｘｘｘｘ 至终 隐藏如下 起始 ｘｘｘｘｘ 至终 隐藏如下 起始 ｘｘｘｘｘ 至终 ｘｘｘｘ 至终。</td>
+                <td>class ｘｘｘ{ ｘｘｘｘ public:{ｘｘｘｘｘ} private:{ｘｘｘｘｘ} protected:{ｘｘｘｘｘ} ｘｘｘｘ};</td></tr>
+                <tr style="color: white;background-color: red;"><td>新</td><td>new</td></tr>
+                <tr><td>ｘｘｘ的ｘｘｘ</td><td>ｘｘｘ.ｘｘｘ</td></tr>using
+                <tr><td>使用</td><td>using</td></tr>
+                <tr><td>名字空间</td><td>namespace</td></tr>
+                <tr><td>ｘｘｘ 作用域的 ｘｘｘ</td><td>ｘｘｘ :: ｘｘｘ</td></tr>
+            </table>
+            <div style="height:90px;"></div>
+            <div style="text-align:center">
+                <a href="https://www.netlify.com">
+                    <img src="https://www.netlify.com/img/global/badges/netlify-light.svg">
+                </a>
+            </div>
+            <div style="height:90px;"></div>
         </div>
     </div>
 </html>

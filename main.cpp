@@ -20,6 +20,7 @@ string head =
 #include <cstdio>\n\
 #include <cstring>\n\
 #include <cstdlib>\n\
+#include <cmath>\n\
 #include <string>\n\
 #include <fstream>\n\
 #include <sstream>\n\
@@ -128,7 +129,12 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "之下标", "[");
 	replace_all_distinct(file, "为几何", "]");
 	replace_all_distinct(file, "空格", "\" \"");
+	replace_all_distinct(file, "无符号", "unsigned");
+	replace_all_distinct(file, "符号", "signed");
+	replace_all_distinct(file, "长长整数", "long long");
+	replace_all_distinct(file, "长整数", "long");
 	replace_all_distinct(file, "整数", "int");
+	replace_all_distinct(file, "浮点数", "float");
 	replace_all_distinct(file, "小数", "double");
 	replace_all_distinct(file, "字符", "char");
 	replace_all_distinct(file, "字串", "string");
@@ -181,6 +187,7 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "，", "");
 	replace_all_distinct(file, "。", ";");
 	replace_all_distinct(file, "空串", "\"\"");
+	replace_all_distinct(file, "空符", "\'\'");
 	replace_all_distinct(file, "若", "if(");
 	replace_all_distinct(file, "者", ")");
 	replace_all_distinct(file, "则", "else ");
@@ -195,8 +202,9 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "模以", "%");
 	replace_all_distinct(file, "使用", "using");
 	replace_all_distinct(file, "名字空间", "namespace");
-	replace_all_distinct(file, "我有一结构体", "struct");
-	replace_all_distinct(file, "我有一类", "class");
+	replace_all_distinct(file, "我有一结构体，名之曰", "struct ");
+	replace_all_distinct(file, "我有一类，名之曰", "class ");
+	replace_all_distinct(file, "类", "class");
 	replace_all_distinct(file, "公开", "public");
 	replace_all_distinct(file, "保护", "protected");
 	replace_all_distinct(file, "如下", ":");
@@ -209,7 +217,7 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "乃继续", "continue");
 	replace_all_distinct(file, "静态", "const");
 	replace_all_distinct(file, "自动", "auto");
-	replace_all_distinct(file, "默认", "default");
+	replace_all_distinct(file, "默认情况", "default ");
 	replace_all_distinct(file, "乃跳转", "goto");
 	replace_all_distinct(file, "乃抛出", "throw");
 	replace_all_distinct(file, "乃试也", "try");
@@ -219,8 +227,8 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "读至", "cin >> ");
 	replace_all_distinct(file, "批注：", "//");
 	replace_all_distinct(file, "批曰。", "//");
-	replace_all_distinct(file, "长批始", "/*");
-	replace_all_distinct(file, "长批终", "*/");
+	replace_all_distinct(file, "长批「", "/*");
+	replace_all_distinct(file, "」长批", "*/");
 	replace_all_distinct(file, "取反", "!");
 	replace_all_distinct(file, "位反", "~");
 	replace_all_distinct(file, "位与", "&");
