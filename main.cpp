@@ -92,8 +92,8 @@ int main(int argc, char* argv[])
 {
 	ifstream infile;
 	string sccf;
-	if (argc <= 2) { cout << "参数不足会吃不饱哦！   The parameters is insufficient!"; return 0; }
-	if (argc >= 5) { cout << "参数给多会吃不消哦！   The parameters is excessive!"; return 0; }
+	if (argc <= 2) { cout << "参数不足会吔不饱哦！   The parameters is insufficient!"; return 0; }
+	if (argc >= 5) { cout << "参数给多会吔不消哦！   The parameters is excessive!"; return 0; }
 	infile.open(argv[1], ios::in);
 	FILE* stream;
 	sccf = "";
@@ -116,7 +116,7 @@ int main(int argc, char* argv[])
 	replace_all_distinct(file, "云云。", "}");
 	replace_all_distinct(file, "云云", "}");
 	replace_all_distinct(file, "至终", "}");
-	replace_all_distinct(file, "我有一函数为主", "int main(int 参数量, char* 参数[])");
+	replace_all_distinct(file, "我有一函数为主", "int main(int 参数数量, char* 参数表[])");
 	replace_all_distinct(file, "我有一函数为", "");
 	replace_all_distinct(file, "我有一言，曰", "cout << ");
 	replace_all_distinct(file, "暂停", "\"pause\"");
